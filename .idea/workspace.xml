@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e26f1184-90b5-4879-aee8-625f9c616829" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/p5.dom.js" afterPath="$PROJECT_DIR$/public/libraries/p5.dom.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/p5.js" afterPath="$PROJECT_DIR$/public/libraries/p5.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sketch.js" afterPath="$PROJECT_DIR$/public/sketch.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sketch.js" afterPath="$PROJECT_DIR$/public/sketch.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +21,8 @@
       <file leaf-file-name="sketch.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+            <state relative-caret-position="357">
+              <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -76,6 +71,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/sketch.js" />
       </list>
     </option>
   </component>
@@ -249,12 +245,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1500717845339</updated>
-      <workItem from="1500717846881" duration="1943000" />
+      <workItem from="1500717846881" duration="2312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1943000" />
+    <option name="totallyTimeSpent" value="2312000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1359" y="0" width="974" height="1047" extended-state="0" />
@@ -331,8 +327,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/sketch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+        <state relative-caret-position="357">
+          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding />
         </state>
       </provider>
