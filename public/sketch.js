@@ -20,4 +20,12 @@ function draw() {
     }
 
     //draw path between the cities
+    stroke(255);
+    strokeWeight(2);
+    noFill();
+    beginShape();
+    for (var i = 0; i < cities.length; i++) {
+        vertex(cities[i].x, cities[i].y);
+    }
+    endShape();
 }
