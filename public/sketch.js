@@ -2,7 +2,7 @@ var cities = [];
 var totalCities = 4;
 var minDistance;
 var bestCitiesOrder;
-var option = 1;
+var option = 2;
 
 function setup() {
     createCanvas(500, 500);
@@ -13,6 +13,9 @@ function setup() {
             break;
         case 1:
             setupLexiOrdering();
+            break;
+        case 2:
+            setupGeneticAlgorithm();
             break;
         default:
             setupLexiOrdering();
@@ -27,6 +30,9 @@ function draw() {
             break;
         case 1:
             lexiOrderingDraw();
+            break;
+        case 2:
+            genetaicAlgorithmDraw();
             break;
         default:
             lexiOrderingDraw();
