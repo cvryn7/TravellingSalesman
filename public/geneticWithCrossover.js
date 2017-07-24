@@ -109,10 +109,11 @@ function nextGeneration() {
     generationCount++;
     var newPopulation = [];
     for (var i = 0; i < population.length; i++) {
-        //we want to pick order with higher fitness
-        //and leave the other orders.
-        var order = pickOne(population, fitness);
-        mutate(order, 1);
+        //Pick two order for crossover
+        var orderA = pickOne(population, fitness);
+        var orderB = pickOne(population, fitness);
+        var order = crossOver(orderA, orderB);
+        mutate(order, 0.1);
         newPopulation[i] = order;
     }
     population = newPopulation
@@ -141,10 +142,38 @@ function pickOne(population, fitness) {
  * @param mutationRate
  */
 function mutate(order, mutationRate) {
-    for (var i = 0; i < mutationRate; i++) {
-        var indexA = floor(random(order.length));
-        var indexB = floor(random(order.length));
-        swap(order, indexA, indexB);
+    for (var i = 0; i < cities; i++) {
+        if (random(1) < mutationRate) {
+            var indexA = floor(random(order.length));
+            var indexB = floor(random(order.length));
+            swap(order, indexA, indexB);
+        }
     }
+}
+
+/**
+ * Take some elements in that sequence from
+ * orderA and then take rest of the elements from
+ * orderB so that elements taken from orderB
+ * are not already included in the elements
+ * taken from orderA
+ * @param orderA
+ * @param orderB
+ */
+function crossOver(orderA, orderB) {
+    var start = floor(random(orderA.length));
+    var end = floor(random(start+1, orderA.length));
+    var newOrder = orderA.slice(start, end);
+
+    //number of elements left to add
+    var left = totalCities - newOrder.length;
+
+    for (var i = 0; i < orderB.length; i++) {
+        var city = orderB[i];
+        if (!newOrder.includes(city)) {
+            newOrder.push(city);
+        }
+    }
+    return newOrder;
 }
 

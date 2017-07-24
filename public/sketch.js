@@ -5,7 +5,7 @@ var bestCitiesOrder;
 var option = 3;
 
 function setup() {
-    createCanvas(500, 500);
+    createCanvas(800, 500);
 
     switch(option) {
         case 0:
