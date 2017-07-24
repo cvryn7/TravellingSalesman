@@ -43,10 +43,11 @@ function draw() {
  * Draw cities as ellipse
  */
 function drawCities() {
-    strokeWeight(0);
-    fill(0, 255, 0);
+    stroke(0, 255, 0);
+    strokeWeight(2);
+    noFill();
     for (var i = 0; i < cities.length; i++) {
-        ellipse(cities[i].x, cities[i].y, 8, 8);
+        ellipse(cities[i].x, cities[i].y, 10, 10);
     }
 }
 

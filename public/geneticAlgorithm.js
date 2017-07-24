@@ -1,6 +1,7 @@
 var population = [];
-
+var fitness = []; // for saving fitness score of elements in population
 function setupGeneticAlgorithm() {
+    minDistance = Infinity;
     var order = [];
 
     //Initialized cities array with random x and y positions
@@ -17,6 +18,15 @@ function setupGeneticAlgorithm() {
         population[i] = shuffle(order);
     }
 
+    for ( var i = 0; i < population.length; i++) {
+        var distance = calcDistanceWithOrder(cities, population[i]);
+        if (distance < minDistance) {
+            minDistance = distance;
+            bestCitiesOrder = population[i];
+        }
+        fitness[i] = distance;
+    }
+
     //Calculate initial total distance
     var distance = calcDistanceWithOrder(cities, order);
     minDistance = distance;
@@ -26,6 +36,18 @@ function setupGeneticAlgorithm() {
 }
 
 function genetaicAlgorithmDraw() {
+    background(0);
 
+
+    stroke(255, 0, 0);
+    strokeWeight(4);
+    noFill();
+    beginShape();
+    for (var i = 0; i < bestCitiesOrder.length; i++) {
+        var n = bestCitiesOrder[i];
+        vertex(cities[n].x, cities[n].y);
+    }
+    endShape();
+    drawCities();
 }
 
