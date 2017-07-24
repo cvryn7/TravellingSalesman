@@ -1,8 +1,8 @@
 var cities = [];
-var totalCities = 4;
+var totalCities = 8;
 var minDistance;
 var bestCitiesOrder;
-var option = 2;
+var option = 3;
 
 function setup() {
     createCanvas(500, 500);
@@ -16,6 +16,9 @@ function setup() {
             break;
         case 2:
             setupGeneticAlgorithm();
+            break;
+        case 3:
+            setupGeneticCrossoverAlgorithm();
             break;
         default:
             setupLexiOrdering();
@@ -33,6 +36,9 @@ function draw() {
             break;
         case 2:
             genetaicAlgorithmDraw();
+            break;
+        case 3:
+            genetaicCrossOverAlgorithmDraw();
             break;
         default:
             lexiOrderingDraw();

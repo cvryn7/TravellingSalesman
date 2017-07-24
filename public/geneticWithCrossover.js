@@ -3,7 +3,7 @@ var fitness = []; // for saving fitness score of elements in population
 var numberOfGenerations = 200;
 var populationSize = 100;
 var generationCount = 0;
-function setupGeneticAlgorithm() {
+function setupGeneticCrossoverAlgorithm() {
     minDistance = Infinity;
     var order = [];
 
@@ -30,7 +30,7 @@ function setupGeneticAlgorithm() {
     totalPermutation = factorial(totalCities);
 }
 
-function genetaicAlgorithmDraw() {
+function genetaicCrossOverAlgorithmDraw() {
     background(0);
     frameRate(10);
     stroke(255);
