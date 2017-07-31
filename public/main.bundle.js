@@ -138,8 +138,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ControlsPanelComponent = (function () {
     function ControlsPanelComponent() {
-        this.algoTypes[0].id = 0;
-        this.algoTypes[0].name = "Brute Force with Repetition";
     }
     ControlsPanelComponent.prototype.ngOnInit = function () {
     };
@@ -197,7 +195,7 @@ module.exports = "<h1>\n  <app-controls-panel></app-controls-panel>\n</h1>\n"
 /***/ 611:
 /***/ (function(module, exports) {
 
-module.exports = "\n<!-- Example single danger button -->\n<div class=\"btn-group\">\n  <button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n    Select Algorithm\n  </button>\n  <div class=\"dropdown-menu\" name=\"algoTypes\">\n    <!---<p class = \"dropdown-item\" *ngFor=\"let x of algoTypes\" id=\"{{x.id}}\">{{x.name}}</p>-->\n  </div>\n</div>\n"
+module.exports = "\n<!-- Example single danger button -->\n<div class=\"btn-group\">\n  <button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n    Select Algorithm\n  </button>\n  <div class=\"dropdown-menu\">\n    <a class = \"dropdown-item\" href=\"#\">Brute force with Repetition</a>\n    <a class = \"dropdown-item\" href=\"#\">Brute force without Repetition</a>\n    <a class = \"dropdown-item\" href=\"#\">Genetic algorithm without Crossover</a>\n    <a class = \"dropdown-item\" href=\"#\">Genetic algorithm with Crossover</a>\n  </div>\n</div>\n<h4>\n<p>\n\n  Work under progress! Implementation for the dropdown is coming by 8/7/2017.\n\n</p>\n</h4>\n"
 
 /***/ }),
 
