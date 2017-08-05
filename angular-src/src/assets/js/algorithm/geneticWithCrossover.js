@@ -30,6 +30,7 @@ function setupGeneticCrossoverAlgorithm() {
   //Calculate initial total distance
   var distance = calcDistanceWithOrder(cities, order);
   minDistance = distance;
+  setDistanceInChart();
   bestestCitiesOrder = order.slice()// get full shallow copy of order array
   bestCitiesOrder = order.slice();
   totalPermutation = factorial(totalCities);
@@ -96,6 +97,8 @@ function calculateFitness() {
     var distance = calcDistanceWithOrder(cities, population[i]);
     if (distance < minDistance) {
       minDistance = distance;
+      setDistanceInChart();
+      setTimePassedInChart();
       bestestCitiesOrder = population[i];
     }
     if (distance < populationMinDistance) {

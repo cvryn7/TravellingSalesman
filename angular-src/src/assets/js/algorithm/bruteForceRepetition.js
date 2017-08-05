@@ -1,8 +1,8 @@
 
-
 function setupBruteForceWithRepetition() {
     var distance = calcDistance(cities);
     minDistance = distance;
+    setDistanceInChart();
     bestCitiesOrder = cities.slice()// get full shallow copy of cities
 }
 
@@ -39,6 +39,8 @@ function bruteForceWithRepetitionDraw(algoName) {
     var distance = calcDistance(cities);
     if (distance < minDistance) {
         minDistance = distance;
+        setDistanceInChart();
+        setTimePassedInChart();
         bestCitiesOrder = cities.slice() // get full shallow copy of the cities array
     }
 }

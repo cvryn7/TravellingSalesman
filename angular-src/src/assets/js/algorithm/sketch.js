@@ -5,7 +5,7 @@ var bestCitiesOrder;
 var option = 0;
 var algoName = "Brute Force with Repetition";
 var cityArrayReset = true;
-
+var startTime;
 function changeCitiesArray() {
   //Initialized cities array with random x and y positions
   for (var i = 0; i < totalCities; i++) {
@@ -22,8 +22,11 @@ function setup(opt, algo, reformCitiesArray) {
     cityArrayReset = reformCitiesArray !== undefined? reformCitiesArray: cityArrayReset;
     if (cityArrayReset) {
       changeCitiesArray();
+      drawTimeChart(null, true);
+      drawDistChart(null, true);
       cityArrayReset = false;
     }
+    startTime = new Date();
     switch(option) {
         case 0:
             setupBruteForceWithRepetition();
@@ -123,4 +126,26 @@ function calcDistance(points) {
         totalDistance += distance;
     }
     return totalDistance;
+}
+
+/**
+ * Function to set minimunDistance on google charts
+ */
+function setDistanceInChart() {
+  var data = {
+    "id": option,
+    "dist": minDistance
+  }
+
+  drawDistChart(data);
+}
+
+function setTimePassedInChart() {
+  var time = (new Date()) - startTime;
+  var data = {
+    "id": option,
+    "time": time
+  }
+
+  drawTimeChart(data);
 }
