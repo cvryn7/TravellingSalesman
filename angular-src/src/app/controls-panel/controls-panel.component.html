@@ -1,20 +1,18 @@
 
 <!-- Example single danger button -->
 <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: 10px">
     Select Algorithm
   </button>
   <div class="dropdown-menu">
-    <div class = "dropdown-item"><p>Brute force with Repetition</p></div>
-    <div class = "dropdown-item"><p>Brute force without Repetition</p></div>
-    <div class = "dropdown-item"><p>Genetic algorithm without Crossover</p></div>
-    <div class = "dropdown-item"><p>Genetic algorithm with Crossover</p></div>
+    <div class = "dropdown-item" *ngFor="let algorithm of algorithms"
+      (click)="selectAlgorithm(algorithm.id)">
+      <p>{{algorithm.name}}</p>
+    </div>
   </div>
 </div>
+<button type="button" class="btn btn-success" (click)="changeCities()">
+  Change Cities
+</button>
 <h4>
-<p>
-
-  Work under progress! Implementation for the dropdown is coming by 8/7/2017.
-
-</p>
 </h4>

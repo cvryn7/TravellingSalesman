@@ -1,6 +1,7 @@
 .dropdown-menu > div {
-  margin-left: 10px;
+  margin-left: 5px;
   padding: 5px;
+  cursor:hand;
 }
 
 .dropdown-menu > div:hover {
@@ -9,3 +10,16 @@
   border-radius: 5px;
   box-shadow: -5px 5px 10px black;
 }
+
+.dropdown-menu > p {
+  cursor:hand;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+}
+
+.btn-success {
+  border-radius: 10px;
+}
+

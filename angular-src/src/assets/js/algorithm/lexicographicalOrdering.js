@@ -2,12 +2,11 @@ var order = [];
 var totalPermutation;
 var count = 0;
 
+
 function setupLexiOrdering() {
-    //Initialized cities array with random x and y positions
-    for (var i = 0; i < totalCities; i++) {
-        var vec = createVector(random(10, width-10), random(10, (height)-40));
-        cities[i] = vec;
-    }
+    order = [];
+    totalPermutation = 0;
+    count = 0;
 
     //Initialize order array with ascending order of numbers
     for (var i = 0; i < cities.length; i++) {
@@ -22,7 +21,10 @@ function setupLexiOrdering() {
     totalPermutation = factorial(totalCities);
 }
 
-function lexiOrderingDraw() {
+function lexiOrderingDraw(algoName) {
+
+    drawHeading(algoName);
+    drawMinDistance(minDistance);
     //draw path between the cities
     stroke(255);
     strokeWeight(1);

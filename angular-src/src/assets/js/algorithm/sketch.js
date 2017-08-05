@@ -2,11 +2,28 @@ var cities = [];
 var totalCities = 8;
 var minDistance;
 var bestCitiesOrder;
-var option = 3;
+var option = 0;
+var algoName = "Brute Force with Repetition";
+var cityArrayReset = true;
 
-function setup() {
-    createCanvas(800, 500);
+function changeCitiesArray() {
+  //Initialized cities array with random x and y positions
+  for (var i = 0; i < totalCities; i++) {
+    var vec = createVector(random(10, width-10), random(20, (height)-20));
+    cities[i] = vec;
+  }
+}
 
+function setup(opt, algo, reformCitiesArray) {
+    var canvas = createCanvas(800, 600);
+    canvas.parent('canvasDiv');
+    option = opt !== undefined? opt : option;
+    algoName = algo !== undefined? algo : algoName;
+    cityArrayReset = reformCitiesArray !== undefined? reformCitiesArray: cityArrayReset;
+    if (cityArrayReset) {
+      changeCitiesArray();
+      cityArrayReset = false;
+    }
     switch(option) {
         case 0:
             setupBruteForceWithRepetition();
@@ -23,25 +40,26 @@ function setup() {
         default:
             setupLexiOrdering();
     }
+  loop();
 }
 
 function draw() {
     background(0);
     switch(option) {
         case 0:
-            bruteForceWithRepetitionDraw();
+            bruteForceWithRepetitionDraw(algoName);
             break;
         case 1:
-            lexiOrderingDraw();
+            lexiOrderingDraw(algoName);
             break;
         case 2:
-            genetaicAlgorithmDraw();
+            genetaicAlgorithmDraw(algoName);
             break;
         case 3:
-            genetaicCrossOverAlgorithmDraw();
+            genetaicCrossOverAlgorithmDraw(algoName);
             break;
         default:
-            lexiOrderingDraw();
+            lexiOrderingDraw(algoName);
     }
 }
 
@@ -55,6 +73,28 @@ function drawCities() {
     for (var i = 0; i < cities.length; i++) {
         ellipse(cities[i].x, cities[i].y, 10, 10);
     }
+}
+
+/**
+ * Draw heading label
+ */
+function drawHeading(heading) {
+  textSize(20);
+  fill(255);
+  strokeWeight(0);
+
+  text(heading, 5, 20);
+}
+
+/**
+ * Draw min distance label
+ */
+function drawMinDistance(minDist) {
+  textSize(20);
+  fill(255);
+  strokeWeight(0);
+
+  text("Minimun Distnace: " + nf(minDist, 0, 2) + " px", 500, 20);
 }
 
 /**

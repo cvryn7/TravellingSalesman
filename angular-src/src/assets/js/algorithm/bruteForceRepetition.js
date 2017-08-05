@@ -1,9 +1,6 @@
+
+
 function setupBruteForceWithRepetition() {
-    //Initialized cities array with random x and y positions
-    for (var i = 0; i < totalCities; i++) {
-        var vec = createVector(random(10, width-10), random(10, (height)-10));
-        cities[i] = vec;
-    }
     var distance = calcDistance(cities);
     minDistance = distance;
     bestCitiesOrder = cities.slice()// get full shallow copy of cities
@@ -12,7 +9,10 @@ function setupBruteForceWithRepetition() {
 /**
  * Draw paths using brute force technique with repetitions
  */
-function bruteForceWithRepetitionDraw() {
+function bruteForceWithRepetitionDraw(algoName) {
+
+    drawHeading(algoName);
+    drawMinDistance(minDistance);
     //draw path between the cities
     stroke(255);
     strokeWeight(1);
